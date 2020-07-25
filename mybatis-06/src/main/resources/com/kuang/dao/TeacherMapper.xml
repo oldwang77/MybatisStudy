@@ -5,4 +5,8 @@
 
 <mapper namespace="com.kuang.dao.TeacherMapper">
 
+    <select id="getTeacher" resultType="com.kuang.pojo.Teacher"></select>
+
+
+    <select id="getTeacher2" resultType="com.kuang.pojo.Teacher"></select>
 </mapper>
