@@ -19,7 +19,7 @@
 
     <!--每一个mapper.xml都需要注册-->
     <mappers>
-        <mapper resource="com/com.kuang/dao/UserMapper.xml"/>
+        <mapper resource="com/kuang/dao/UserMapper.xml"/>
     </mappers>
 
 </configuration>
