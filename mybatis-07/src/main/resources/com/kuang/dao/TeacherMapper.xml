@@ -5,6 +5,8 @@
 
 <mapper namespace="com.kuang.dao.TeacherMapper">
 
+    <!--collection是一对多查询，一个老师有多个学生关联-->
+
     <select id="getTeacher" resultMap="TeacherStudent">
         select s.id sid, s.name sname, t.name tname, t.id tid
         from student s, teacher t
