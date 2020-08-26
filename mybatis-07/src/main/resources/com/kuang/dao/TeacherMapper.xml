@@ -6,6 +6,9 @@
 <mapper namespace="com.kuang.dao.TeacherMapper">
 
     <!--collection是一对多查询，一个老师有多个学生关联-->
+    <!--学生表是id,name,tid-->
+    <!--老师是id,name-->
+    <!--老师pojo是id,name,studentList-->
 
     <select id="getTeacher" resultMap="TeacherStudent">
         select s.id sid, s.name sname, t.name tname, t.id tid

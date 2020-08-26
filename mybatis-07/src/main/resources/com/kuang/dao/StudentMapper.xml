@@ -13,7 +13,7 @@
     -->
     <resultMap id="StudentTeacher" type="com.kuang.pojo.Student">
         <result property="id" column="id"></result>
-        <result property="id" column="id"></result>
+
         <!--复杂的属性
             对象：association
             集合：collection
@@ -22,12 +22,12 @@
                      select="getTeacher"></association>
     </resultMap>
 
-    <select id="getStudent" resultMap="StudentTeacher">
-        select *  from student
-    </select>
-
     <select id="getTeacher" resultType="com.kuang.pojo.Teacher">
         select * from teacher where id = #{id}
+    </select>
+
+    <select id="getStudent" resultMap="StudentTeacher">
+        select *  from student
     </select>
 
 

@@ -5,8 +5,8 @@
 
 <mapper namespace="com.kuang.dao.StudentMapper">
     <!--思路
-        1 查询所有的学生
-        2 根据查询出来学生的tid，用来去查找老师
+        1 查询所有的学生信息
+        2 根据查询出来学生的tid，寻找对应的老师
     -->
 
     <select id="getStudent" resultMap="StudentTeacher">
@@ -15,11 +15,15 @@
 
     <resultMap id="StudentTeacher" type="com.kuang.pojo.Student">
         <result property="id" column="id"></result>
-        <result property="id" column="id"></result>
-        <!--复杂的属性
+        <result property="name" column="name"></result>
+        <!--复杂的属性,我们需要单独处理
             对象：association
             集合：collection
         -->
+        <!--asspcoation中的select相当于是一个嵌套查询-->
+        <!--学生表是id,name,tid-->
+        <!--老师表是id,name-->
+        <!--学生的pojo是id,name,teacher-->
         <association property="teacher" column="tid" javaType="com.kuang.pojo.Teacher" select="getTeacher"></association>
     </resultMap>
 
